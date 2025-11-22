@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保戶登入</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+
+            <h2 class="title">保戶登入</h2>
+            <p class="subtitle">請輸入帳號（身分證字號）與密碼</p>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <form method="POST" class="login-form">
+                <label>帳號（身分證字號）</label>
+                <input 
+                    type="text" 
+                    name="national_id" 
+                    placeholder="例如：A123456789" 
+                    required>
+
+                <label>密碼</label>
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="請輸入密碼"
+                    required>
+
+                <button type="submit" class="login-btn">登入</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

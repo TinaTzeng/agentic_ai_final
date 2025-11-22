@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保險理賠智能助理（Multi-Agent）</title>
+    <link rel="stylesheet" href="/static/css/chat.css">
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <!-- Header -->
+        <header class="chat-header">
+            <h2>保險理賠智能助理（Multi-Agent）</h2>
+        </header>
+
+        <!-- Chat messages -->
+        <div id="chat-box" class="chat-box"></div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <input id="user-input" type="text" placeholder="輸入訊息，例如：我住院可以申請理賠嗎？">
+            <button id="send-btn">送出</button>
+        </div>
+
+    </div>
+
+
+<script>
+// ----------------------------
+// 新版：左右對齊，無角色標籤
+// ----------------------------
+function addMessage(text, sender) {
+    const chatBox = document.getElementById("chat-box");
+
+    const container = document.createElement("div");
+    container.classList.add("msg-container", sender);
+
+    const message = document.createElement("div");
+    message.classList.add("msg", sender);
+    message.innerHTML = `<p>${text}</p>`;
+
+    container.appendChild(message);
+    chatBox.appendChild(container);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+
+// ----------------------------
+// 發送訊息到後端
+// ----------------------------
+document.getElementById("send-btn").onclick = async function () {
+    const input = document.getElementById("user-input");
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage(text, "user");
+    input.value = "";
+
+    const response = await fetch("/chat_api", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text })
+    });
+
+    const data = await response.json();
+    addMessage(data.reply, "bot");
+};
+
+// ----------------------------
+// 支援 Enter 送出訊息
+// ----------------------------
+document.getElementById("user-input").addEventListener("keydown", function (event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+        event.preventDefault();
+        document.getElementById("send-btn").click();
+    }
+});
+</script>
+
+</body>
+</html>

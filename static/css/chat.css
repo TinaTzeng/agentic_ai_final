@@ -1,0 +1,109 @@
+/* ====== 整體背景 ====== */
+body {
+    margin: 0;
+    padding: 0;
+    background: #eef3f2;
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+/* ====== 主聊天容器 ====== */
+.chat-container {
+    width: 100%;
+    max-width: 700px;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ====== 標題 ====== */
+.chat-header {
+    background: #1f5653;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* ====== 聊天內容區 ====== */
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* ====== 訊息容器 ====== */
+.msg-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+/* 使用者靠右、保險助手靠左 */
+.msg-container.user {
+    align-items: flex-end;
+}
+.msg-container.bot {
+    align-items: flex-start;
+}
+
+/* ====== 角色標籤 ====== */
+.label {
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #5b6b6a;
+    opacity: 0.8;
+}
+
+/* ====== 訊息泡泡 ====== */
+.msg {
+    max-width: 75%;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* 保險助手（左） */
+.msg.bot {
+    background: #ffffff;
+    border: 1px solid #d6e2df;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+}
+
+/* 使用者（右） */
+.msg.user {
+    background: #c9ebe6;
+    color: #00332f;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+}
+
+/* ====== 輸入區 ====== */
+.input-area {
+    display: flex;
+    padding: 12px;
+    background: white;
+    border-top: 1px solid #d5dcd9;
+}
+
+.input-area input {
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cfdcd9;
+    font-size: 16px;
+}
+
+.input-area button {
+    margin-left: 10px;
+    padding: 12px 16px;
+    background: #1f5653;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background: #15413e;
+}

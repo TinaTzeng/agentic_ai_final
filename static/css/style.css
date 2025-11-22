@@ -1,0 +1,96 @@
+/* ------------------------
+   Overall Page Layout
+------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    background: #f4f7f6;  /* 柔和淺灰綠 */
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+/* 讓卡片置中 */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ------------------------
+   Login Card Style
+------------------------- */
+.login-card {
+    background: #ffffff;
+    padding: 40px 50px;
+    width: 420px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.title {
+    text-align: center;
+    color: #1f5653;         /* 柔和深綠 */
+    margin: 0 0 8px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 28px;
+}
+
+/* 錯誤訊息 */
+.error {
+    color: #d9534f;
+    background: #f9d6d5;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* ------------------------
+   Input Style
+------------------------- */
+.login-form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #444;
+    font-size: 14px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #cdd5d2;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fdfdfd;
+}
+
+.login-form input:focus {
+    border-color: #1f5653;
+    outline: none;
+    box-shadow: 0 0 4px rgba(31, 86, 83, 0.3);
+}
+
+/* ------------------------
+   Login Button
+------------------------- */
+.login-btn {
+    width: 100%;
+    background: #1f5653;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #184542;
+}
