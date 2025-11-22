@@ -6,7 +6,8 @@ def get_db_connection():
         host="localhost",
         database="project",
         user="postgres",
-        password=os.getenv("DB_PASSWORD")   # 從 .env 讀取密碼
+        password="postgres"
+        # password=os.getenv("DB_PASSWORD")   # 從 .env 讀取密碼
     )
 
 def get_user_by_national_id(national_id):
