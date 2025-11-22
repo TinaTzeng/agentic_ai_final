@@ -1,6 +1,8 @@
 - 下載專案
   git clone https://github.com/TinaTzeng/agentic_ai_final.git
+  
   cd agentic_ai_final
+  
 - 建立虛擬環境（venv）＋ 安裝套件
   python -m venv venv
   source venv/bin/activate   # Windows：venv\Scripts\activate
