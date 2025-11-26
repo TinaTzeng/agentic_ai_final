@@ -5,6 +5,18 @@ from psycopg2.extras import execute_batch
 
 CSV_FILE = "insurance_rag_data.csv"   # ← 你的 CSV 檔名
 TABLE_NAME = "insurance_embeddings"   # ← 你的資料表名稱（記得要先建好）
+''' 先在資料庫建立table:
+CREATE TABLE insurance_embeddings (
+    id TEXT PRIMARY KEY,
+    text TEXT,
+    context_text TEXT,
+    policy_name TEXT,
+    metadata_file TEXT,
+    type TEXT,
+    embedding vector(768)
+);
+'''
+
 
 # PostgreSQL 連線資訊（你可用 .env 或手動填）
 DB_CONFIG = {
