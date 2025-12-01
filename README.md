@@ -18,7 +18,7 @@
   
   database: project
   
-  user: pstgres
+  user: postgres
   
   password: postgres
   
